@@ -17,3 +17,14 @@ const puppeteer = require('puppeteer');
 
   await browser.close();
 })();
+
+
+// function getLatLong(){
+//   const data = JSON.parse(document.getElementById("__NEXT_DATA__").textContent)
+//   let restaurantList = data.props.initialReduxState.pageRestaurantsV2.entities.restaurantList
+//   for (let key in restaurantList){
+//      return ({latitude: restaurantList[key].latitude,
+//       longitude: restaurantList[key].longitude})
+//   }
+// }
+// console.log(getLatLong())
