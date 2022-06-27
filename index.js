@@ -1,4 +1,6 @@
+var final
 const puppeteer = require('puppeteer');
+
 
 (async () => {
   const browser = await puppeteer.launch({headless:false});
@@ -7,16 +9,20 @@ const puppeteer = require('puppeteer');
   await page.screenshot({path: 'wiki.png'});
 //   await browser.waitForTarget(()=>false)
 
-  const result=await page.evaluate(()=>{
+  let result=await page.evaluate(()=>{
     let headingFromWeb = document.querySelectorAll(".mw-headline")
     const headingList=[...headingFromWeb]
     return headingList.map(h=>h.innerText)
   })
-
-  console.log(result)
+  final=result
+  console.log(final)
+  
+  // document.querySelector("#name").append(result)
 
   await browser.close();
 })();
+
+console.log("hello"+final+"final")
 
 
 // function getLatLong(){
